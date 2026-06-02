@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== resources.html — Free Resources page (static cards) ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Resources — Ballpoint with Kushal</title>
+  <meta name="description" content="Free study material: formula sheets, vocabulary lists, mock tests, study guides, and exam checklists — by Ballpoint with Kushal." />
+  <link rel="canonical" href="https://example.com/resources.html" />
+  <meta property="og:title" content="Free Resources — Ballpoint with Kushal" />
+  <meta property="og:description" content="Useful material you can grab today — no payment, no sign-up wall." />
+  <meta property="og:image" content="assets/images/og-image.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg" />
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="navbar">
+    <nav class="container navbar__inner" aria-label="Primary">
+      <a class="navbar__logo" href="index.html" aria-label="Ballpoint with Kushal — home"><img src="assets/logos/logo-full.svg" alt="Ballpoint with Kushal" /></a>
+      <ul class="navbar__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="ebooks.html">Ebooks</a></li>
+        <li><a href="resources.html" aria-current="page">Resources</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions"><a class="btn btn--primary btn--sm" href="index.html#waitlist">Join Waitlist</a></div>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="about.html">About</a><a href="courses.html">Courses</a><a href="ebooks.html">Ebooks</a>
+    <a href="resources.html">Resources</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a>
+    <a class="btn btn--primary btn--full mt-sm" href="index.html#waitlist">Join Waitlist</a>
+  </div>
+
+  <main id="main">
+    <section class="section section--tight bg-decor">
+      <div class="container section-head section-head--center" data-reveal>
+        <span class="eyebrow">Free</span>
+        <h1>Free Resources</h1>
+        <p>Everything here is free to use. Replace the placeholder links with your real downloads (Google Drive, PDF links, etc.).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- To add a resource: copy one <article> block and edit it. -->
+        <div class="grid grid--3">
+          <article class="card resource-card" data-reveal><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h4l3-14h4"/><path d="M6 12h8"/></svg></div><div><h3>Formula Sheets</h3><p>Condensed Quant formulas for fast revision.</p><a class="btn btn--ghost btn--sm" href="#">Download →</a></div></article>
+          <article class="card resource-card" data-reveal data-reveal-delay="1"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5a2 2 0 0 1 2-2h12v17H6a2 2 0 0 0-2 2z"/><path d="M18 3v17"/></svg></div><div><h3>Vocabulary Lists</h3><p>High-frequency words for English sections.</p><a class="btn btn--ghost btn--sm" href="#">Download →</a></div></article>
+          <article class="card resource-card" data-reveal data-reveal-delay="2"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div><div><h3>Mock Tests</h3><p>Timed practice sets to simulate exam day.</p><a class="btn btn--ghost btn--sm" href="#">Start →</a></div></article>
+          <article class="card resource-card" data-reveal><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div><h3>Study Guides</h3><p>Step-by-step roadmaps per exam.</p><a class="btn btn--ghost btn--sm" href="#">Read →</a></div></article>
+          <article class="card resource-card" data-reveal data-reveal-delay="1"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><h3>Exam Checklists</h3><p>Don’t miss a topic before exam day.</p><a class="btn btn--ghost btn--sm" href="#">Get it →</a></div></article>
+          <article class="card resource-card" data-reveal data-reveal-delay="2"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><div><h3>Progress Trackers</h3><p>Measure where you stand each week.</p><a class="btn btn--ghost btn--sm" href="#">Use it →</a></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><img src="assets/logos/logo-full.svg" alt="Ballpoint with Kushal" /><p>Structured preparation for ambitious professionals.</p></div>
+        <div class="footer__col"><h4>Learn</h4><a href="courses.html">Courses</a><a href="ebooks.html">Ebooks</a><a href="resources.html">Resources</a></div>
+        <div class="footer__col"><h4>Brand</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="index.html#waitlist">Join Waitlist</a></div>
+        <div class="footer__col"><h4>Coming soon</h4><a href="#">Blog</a><a href="#">Mock Tests</a><a href="#">Dashboard</a></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-year>2026</span> Ballpoint with Kushal.</span><span>Made for ambitious learners 🇧🇩</span></div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

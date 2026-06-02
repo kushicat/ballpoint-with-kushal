@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== contact.html — dedicated Contact page =====
+       Reuses the same CSS/JS as index.html.
+       TODO before launch: replace every placeholder href (email + socials)
+       with your real handles, and wire the form per the notes in js/forms.js. -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Ballpoint with Kushal</title>
+  <meta name="description" content="Get in touch with Ballpoint with Kushal — questions, partnerships, or feedback. Reach out by email or on social media." />
+  <link rel="canonical" href="https://example.com/contact.html" />
+  <meta property="og:title" content="Contact — Ballpoint with Kushal" />
+  <meta property="og:description" content="Questions, partnerships, or feedback? Get in touch." />
+  <meta property="og:image" content="assets/images/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg" />
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAVBAR (same markup as index.html — keep in sync across pages) -->
+  <header class="navbar">
+    <nav class="container navbar__inner" aria-label="Primary">
+      <a class="navbar__logo" href="index.html" aria-label="Ballpoint with Kushal — home"><img src="assets/logos/logo-full.svg" alt="Ballpoint with Kushal" /></a>
+      <ul class="navbar__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="ebooks.html">Ebooks</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a class="btn btn--primary btn--sm" href="index.html#waitlist">Join Waitlist</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="about.html">About</a><a href="courses.html">Courses</a><a href="ebooks.html">Ebooks</a>
+    <a href="resources.html">Resources</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a>
+    <a class="btn btn--primary btn--full mt-sm" href="index.html#waitlist">Join Waitlist</a>
+  </div>
+
+  <main id="main">
+    <!-- Page hero -->
+    <section class="section section--tight bg-decor">
+      <div class="container section-head section-head--center" data-reveal>
+        <span class="eyebrow">Get in touch</span>
+        <h1>Contact</h1>
+        <p>Questions, partnerships, or feedback? Reach out on any channel below — we read everything.</p>
+      </div>
+    </section>
+
+    <!-- Contact channels (same cards as the homepage contact section) -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="grid grid--4" data-reveal>
+          <!-- TODO: replace every href below with your real handles -->
+          <a class="card resource-card" href="mailto:hello@example.com">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></div>
+            <div><h3 style="font-size:1.05rem">Email</h3><p class="text-muted" style="font-size:var(--fs-small)">hello@example.com</p></div>
+          </a>
+          <a class="card resource-card" href="https://facebook.com/your-page" target="_blank" rel="noopener">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9z"/></svg></div>
+            <div><h3 style="font-size:1.05rem">Facebook</h3><p class="text-muted" style="font-size:var(--fs-small)">/your-page</p></div>
+          </a>
+          <a class="card resource-card" href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3 8.5h3.9V21H3zM9.5 8.5h3.7v1.7h.05c.5-.95 1.8-1.95 3.7-1.95 4 0 4.7 2.6 4.7 6V21H21.6v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H13.8z"/></svg></div>
+            <div><h3 style="font-size:1.05rem">LinkedIn</h3><p class="text-muted" style="font-size:var(--fs-small)">/your-profile</p></div>
+          </a>
+          <a class="card resource-card" href="https://youtube.com/@your-handle" target="_blank" rel="noopener">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.45-5.18a2.78 2.78 0 0 0-1.95-2C18.88 4.5 12 4.5 12 4.5s-6.88 0-8.6.32a2.78 2.78 0 0 0-1.95 2C1 8.5 1 12 1 12s0 3.5.45 5.18a2.78 2.78 0 0 0 1.95 2c1.72.32 8.6.32 8.6.32s6.88 0 8.6-.32a2.78 2.78 0 0 0 1.95-2C23 15.5 23 12 23 12zM10 15.5v-7l6 3.5z"/></svg></div>
+            <div><h3 style="font-size:1.05rem">YouTube</h3><p class="text-muted" style="font-size:var(--fs-small)">@your-handle</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional contact form. Like the waitlist form, this is a front-end
+         placeholder handled by js/forms.js (data-form). To make it actually
+         send, wire it to Formspree / Google Forms / a sheet — see js/forms.js. -->
+    <section class="section section--alt" aria-labelledby="cf-title">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">Send a message</span>
+          <h2 id="cf-title">Drop us a line</h2>
+          <p>Prefer a form? Fill this in and we’ll get back to you by email.</p>
+        </div>
+
+        <div class="form-card mx-auto" data-reveal>
+          <form data-form action="#" method="post" novalidate>
+            <div class="form-field">
+              <label for="cf-name">Full name</label>
+              <input id="cf-name" name="name" type="text" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="cf-email">Email address</label>
+              <input id="cf-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="cf-subject">Subject</label>
+              <select id="cf-subject" name="subject" required>
+                <option value="" disabled selected>What’s this about?</option>
+                <option>Course question</option>
+                <option>Partnership / collaboration</option>
+                <option>Feedback</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="4" placeholder="How can we help?" required></textarea>
+            </div>
+            <button class="btn btn--primary btn--full" type="submit">Send message</button>
+            <p class="form-note">We’ll only use your details to reply. No spam, ever.</p>
+          </form>
+          <!-- Success message shown by forms.js after submit -->
+          <div class="form-success mt-md">✓ Thanks — your message is on its way. We’ll reply by email.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (shared) -->
+  <footer class="footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/logos/logo-full.svg" alt="Ballpoint with Kushal" />
+          <p>Structured preparation for ambitious professionals.</p>
+        </div>
+        <div class="footer__col"><h4>Learn</h4><a href="courses.html">Courses</a><a href="ebooks.html">Ebooks</a><a href="resources.html">Resources</a></div>
+        <div class="footer__col"><h4>Brand</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="index.html#waitlist">Join Waitlist</a></div>
+        <div class="footer__col"><h4>Coming soon</h4><a href="#">Blog</a><a href="#">Mock Tests</a><a href="#">Dashboard</a></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-year>2026</span> Ballpoint with Kushal.</span><span>Made for ambitious learners 🇧🇩</span></div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

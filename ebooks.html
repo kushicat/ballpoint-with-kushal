@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== ebooks.html — dedicated Ebook Library page =====
+       Grid rendered from data/ebooks.json via main.js ([data-ebooks]). -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ebooks — Ballpoint with Kushal</title>
+  <meta name="description" content="Exam-focused ebooks: vocabulary, Quant formulas, English grammar, and career guidance — by Ballpoint with Kushal." />
+  <link rel="canonical" href="https://example.com/ebooks.html" />
+  <meta property="og:title" content="Ebooks — Ballpoint with Kushal" />
+  <meta property="og:description" content="Compact, exam-focused ebooks you can study at your own pace." />
+  <meta property="og:image" content="assets/images/og-image.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg" />
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="navbar">
+    <nav class="container navbar__inner" aria-label="Primary">
+      <a class="navbar__logo" href="index.html" aria-label="Ballpoint with Kushal — home"><img src="assets/logos/logo-full.svg" alt="Ballpoint with Kushal" /></a>
+      <ul class="navbar__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="ebooks.html" aria-current="page">Ebooks</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions"><a class="btn btn--primary btn--sm" href="index.html#waitlist">Join Waitlist</a></div>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="about.html">About</a><a href="courses.html">Courses</a><a href="ebooks.html">Ebooks</a>
+    <a href="resources.html">Resources</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a>
+    <a class="btn btn--primary btn--full mt-sm" href="index.html#waitlist">Join Waitlist</a>
+  </div>
+
+  <main id="main">
+    <section class="section section--tight bg-decor">
+      <div class="container section-head section-head--center" data-reveal>
+        <span class="eyebrow">Self-study</span>
+        <h1>Ebook Library</h1>
+        <p>Compact, exam-focused ebooks you can study at your own pace. New titles are added regularly.</p>
+      </div>
+    </section>
+
+    <section class="section" id="ebooks">
+      <div class="container">
+        <div class="grid grid--4" data-ebooks aria-live="polite">
+          <p class="text-muted text-center">Loading ebooks…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container text-center" data-reveal>
+        <h2>Want to know when new ebooks drop?</h2>
+        <p class="mx-auto max-prose mt-sm">Join the waitlist and you’ll be first to hear about new releases and launch discounts.</p>
+        <a class="btn btn--primary mt-md" href="index.html#waitlist">Join Waitlist</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><img src="assets/logos/logo-full.svg" alt="Ballpoint with Kushal" /><p>Structured preparation for ambitious professionals.</p></div>
+        <div class="footer__col"><h4>Learn</h4><a href="courses.html">Courses</a><a href="ebooks.html">Ebooks</a><a href="resources.html">Resources</a></div>
+        <div class="footer__col"><h4>Brand</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="index.html#waitlist">Join Waitlist</a></div>
+        <div class="footer__col"><h4>Coming soon</h4><a href="#">Blog</a><a href="#">Mock Tests</a><a href="#">Dashboard</a></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-year>2026</span> Ballpoint with Kushal.</span><span>Made for ambitious learners 🇧🇩</span></div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

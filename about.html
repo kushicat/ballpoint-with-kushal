@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== about.html — dedicated About / profile page =====
+       Reuses the same CSS/JS as index.html. Edit the profile copy, role badges,
+       and timeline items below. Swap placeholder-portrait.svg for a real photo. -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Kushal — Ballpoint with Kushal</title>
+  <meta name="description" content="Kushal — Mathematics graduate (University of Dhaka), IBA MBA student, and banking professional teaching structured exam and career preparation." />
+  <link rel="canonical" href="https://example.com/about.html" />
+  <meta property="og:title" content="About Kushal — Ballpoint with Kushal" />
+  <meta property="og:description" content="A Math graduate and working banking professional who has actually sat these exams." />
+  <meta property="og:image" content="assets/images/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg" />
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAVBAR (same markup as index.html — keep in sync across pages) -->
+  <header class="navbar">
+    <nav class="container navbar__inner" aria-label="Primary">
+      <a class="navbar__logo" href="index.html" aria-label="Ballpoint with Kushal — home"><img src="assets/logos/logo-full.svg" alt="Ballpoint with Kushal" /></a>
+      <ul class="navbar__links">
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="ebooks.html">Ebooks</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a class="btn btn--primary btn--sm" href="index.html#waitlist">Join Waitlist</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="about.html">About</a><a href="courses.html">Courses</a><a href="ebooks.html">Ebooks</a>
+    <a href="resources.html">Resources</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a>
+    <a class="btn btn--primary btn--full mt-sm" href="index.html#waitlist">Join Waitlist</a>
+  </div>
+
+  <main id="main">
+    <!-- Page hero -->
+    <section class="section section--tight bg-decor">
+      <div class="container section-head section-head--center" data-reveal>
+        <span class="eyebrow">About</span>
+        <h1>Taught by someone who has actually done it</h1>
+        <p>Ballpoint with Kushal exists to replace scattered, unreliable prep with one clear, structured path — built by a Math graduate and working banking professional.</p>
+      </div>
+    </section>
+
+    <!-- Profile + timeline (mirrors the homepage About section) -->
+    <section class="section section--tight" aria-labelledby="profile-title">
+      <div class="container about__grid">
+        <div class="about__photo" data-reveal>
+          <!-- Replace with a real portrait: assets/images/kushal-about.jpg -->
+          <img src="assets/images/placeholder-portrait.svg" alt="Portrait of Kushal" width="800" height="800" />
+        </div>
+        <div data-reveal data-reveal-delay="1">
+          <span class="eyebrow">The person behind the brand</span>
+          <h2 id="profile-title">A rigorous mind, real-world experience</h2>
+          <p>Kushal combines a rigorous mathematics background with real corporate experience — so preparation is grounded in both deep understanding and what exams and employers actually reward. The goal isn’t shortcuts; it’s structure that builds genuine skill.</p>
+
+          <div class="about__roles">
+            <span class="badge badge--soft">Mathematics Graduate</span>
+            <span class="badge badge--soft">IBA MBA Student</span>
+            <span class="badge badge--green">Banking Professional</span>
+            <span class="badge badge--green">Educator</span>
+          </div>
+
+          <!-- Timeline: edit/add items freely; styling is automatic -->
+          <ol class="timeline">
+            <li class="timeline__item">
+              <h4>Mathematics, University of Dhaka</h4>
+              <span>Graduate degree — the foundation for a concept-first approach to Quant.</span>
+            </li>
+            <li class="timeline__item">
+              <h4>MBA at IBA, University of Dhaka</h4>
+              <span>Currently a student at one of the country’s most competitive programs.</span>
+            </li>
+            <li class="timeline__item">
+              <h4>Management Trainee, Private Bank</h4>
+              <span>Day-to-day exposure to the corporate and banking world candidates aim for.</span>
+            </li>
+            <li class="timeline__item">
+              <h4>Educator & Content Creator</h4>
+              <span>Mentoring competitive-exam candidates and creating structured learning content.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach / values — three principles. Edit or remove cards freely. -->
+    <section class="section section--alt" aria-labelledby="approach-title">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">The approach</span>
+          <h2 id="approach-title">How preparation works here</h2>
+        </div>
+        <div class="grid grid--3">
+          <article class="card" data-reveal>
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5m0 14h16M8 17v-5m4 5V9m4 8v-7"/></svg></div>
+            <h3>Concepts before tricks</h3>
+            <p class="text-muted">Understanding first. Once the fundamentals are solid, speed and shortcuts come naturally — not the other way around.</p>
+          </article>
+          <article class="card" data-reveal data-reveal-delay="1">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <h3>One clear path</h3>
+            <p class="text-muted">No information overload. A structured roadmap tells you exactly what to study, in what order, and when you’re ready.</p>
+          </article>
+          <article class="card" data-reveal data-reveal-delay="2">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <h3>Practice that mirrors the real exam</h3>
+            <p class="text-muted">Timed mocks and targeted drills built around the actual format — so exam day feels familiar, not surprising.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reusable CTA band -->
+    <section class="section">
+      <div class="container text-center" data-reveal>
+        <h2>Start with a structured plan</h2>
+        <p class="mx-auto max-prose mt-sm">Join the waitlist and tell us your target exam — you’ll get a recommended path plus free resources to begin today.</p>
+        <a class="btn btn--primary mt-md" href="index.html#waitlist">Join Waitlist</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (shared) -->
+  <footer class="footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/logos/logo-full.svg" alt="Ballpoint with Kushal" />
+          <p>Structured preparation for ambitious professionals.</p>
+        </div>
+        <div class="footer__col"><h4>Learn</h4><a href="courses.html">Courses</a><a href="ebooks.html">Ebooks</a><a href="resources.html">Resources</a></div>
+        <div class="footer__col"><h4>Brand</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="index.html#waitlist">Join Waitlist</a></div>
+        <div class="footer__col"><h4>Coming soon</h4><a href="#">Blog</a><a href="#">Mock Tests</a><a href="#">Dashboard</a></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-year>2026</span> Ballpoint with Kushal.</span><span>Made for ambitious learners 🇧🇩</span></div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
