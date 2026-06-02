@@ -1,0 +1,21 @@
+<!--
+  ============================================================
+  BALLPOINT WITH KUSHAL — ICON LOGO (symbol only)
+  ------------------------------------------------------------
+  Use for: favicon source, app icon, social avatar, compact navbar.
+  Square 48x48 canvas. Recolour via the gradient stops below.
+  ============================================================
+-->
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ballpoint with Kushal icon">
+  <defs>
+    <linearGradient id="bpkIconGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="#F8FAFC"/>
+  <path d="M11 38 L33 16" stroke="url(#bpkIconGrad)" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M33 16 L42 7 L38 20 Z" fill="url(#bpkIconGrad)"/>
+  <circle cx="12" cy="39" r="4" fill="#0F172A"/>
+  <path d="M42 7 L42 18 M42 7 L31 7" stroke="url(#bpkIconGrad)" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

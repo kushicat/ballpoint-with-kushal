@@ -1,0 +1,67 @@
+/* ============================================================================
+   BALLPOINT WITH KUSHAL — responsive.css
+   ALL breakpoints live here so responsive behaviour is in one predictable place.
+   Approach: the base styles (styles.css / components.css) are written for small
+   screens where sensible; this file layers tablet/desktop refinements and the
+   mobile collapses for grids and the navbar.
+
+   Breakpoints:
+     <= 1024px  tablet
+     <= 768px   large mobile / small tablet (navbar collapses to hamburger here)
+     <= 560px   phones
+   ============================================================================ */
+
+/* ------------------------------- <= 1024px --------------------------------- */
+@media (max-width: 1024px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+
+  .hero__grid { gap: var(--space-lg); }
+  .about__grid { gap: var(--space-lg); }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+}
+
+/* --------------------- <= 768px : navbar collapses ------------------------- */
+@media (max-width: 768px) {
+  /* Show hamburger, hide desktop links + actions */
+  .hamburger { display: flex; }
+  .navbar__links,
+  .navbar__actions { display: none; }
+
+  /* Single-column stacks */
+  .hero__grid { grid-template-columns: 1fr; text-align: center; }
+  .hero__sub { margin-inline: auto; }
+  .hero__cta { justify-content: center; }
+  .hero__photo { max-width: 420px; margin-inline: auto; order: -1; } /* photo first on mobile */
+  .hero__chip { display: none; } /* floating chips are decorative — hide on small screens */
+
+  .about__grid { grid-template-columns: 1fr; }
+  .about__photo { max-width: 420px; margin-inline: auto; }
+
+  .compare { grid-template-columns: 1fr; }
+  .grid--2 { grid-template-columns: 1fr; }
+  .grid--3 { grid-template-columns: 1fr; }
+
+  .section { padding-block: var(--space-xl); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ------------------------------- <= 560px ---------------------------------- */
+@media (max-width: 560px) {
+  .grid--4,
+  .grid--3,
+  .grid--2 { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .footer__grid { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; align-items: flex-start; }
+
+  .btn { width: 100%; } /* full-width tap targets on phones */
+  .hero__cta { flex-direction: column; }
+  .resource-card { flex-direction: column; }
+}
+
+/* --------- Desktop-only: keep nav visible at >768px (explicit) ------------- */
+@media (min-width: 769px) {
+  .mobile-drawer { display: none !important; }
+}

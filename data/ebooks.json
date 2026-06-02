@@ -1,0 +1,37 @@
+{
+  "_comment": "EDIT THIS FILE to change ebook cards. 'status' can be: available | coming-soon. 'link' points to a download/sales page (replace # later). 'category' is shown as a small tag.",
+  "ebooks": [
+    {
+      "id": "vocab-1000",
+      "title": "1000 High-Frequency Vocabulary",
+      "category": "Vocabulary",
+      "status": "coming-soon",
+      "description": "The words that actually repeat across admission and bank exams, with meaning, usage and Bangla glosses.",
+      "link": "#waitlist"
+    },
+    {
+      "id": "quant-formula-bible",
+      "title": "Quant Formula Bible",
+      "category": "Quant",
+      "status": "coming-soon",
+      "description": "Every formula you need for aptitude tests in one organised, revision-friendly reference.",
+      "link": "#waitlist"
+    },
+    {
+      "id": "english-grammar-system",
+      "title": "The English Grammar System",
+      "category": "English",
+      "status": "coming-soon",
+      "description": "Grammar explained as a connected system — rules, logic and the traps examiners love.",
+      "link": "#waitlist"
+    },
+    {
+      "id": "career-playbook",
+      "title": "The Corporate Career Playbook",
+      "category": "Career",
+      "status": "coming-soon",
+      "description": "CV, interview and early-career guidance for ambitious professionals entering banking and corporate roles.",
+      "link": "#waitlist"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<!-- PLACEHOLDER social share card (1200x630 — the standard OG/Twitter size).
+     Export this to assets/images/og-image.jpg (or .png) before launch so links
+     unfurl nicely on Facebook, LinkedIn, WhatsApp, X, etc. -->
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ogGrad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="#0B1220" stroke="url(#ogGrad)" stroke-width="2"/>
+  <g transform="translate(110,150)">
+    <path d="M0 120 L70 50" stroke="url(#ogGrad)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M70 50 L100 20 L88 64 Z" fill="url(#ogGrad)"/>
+    <circle cx="2" cy="122" r="11" fill="#fff"/>
+  </g>
+  <text x="240" y="250" font-family="'Plus Jakarta Sans',sans-serif" font-size="64" font-weight="800" fill="#fff">Ballpoint with Kushal</text>
+  <text x="242" y="320" font-family="'Inter',sans-serif" font-size="32" fill="#94A3B8">Structured preparation for ambitious professionals</text>
+  <text x="242" y="430" font-family="'Inter',sans-serif" font-size="24" fill="#10B981" font-weight="600">IBA MBA · Bank Jobs · Quant · English · Career</text>
+</svg>

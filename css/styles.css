@@ -1,0 +1,212 @@
+/* ============================================================================
+   BALLPOINT WITH KUSHAL — styles.css
+   Base layer: design tokens, reset, typography, layout primitives.
+
+   HOW THIS FILE IS ORGANISED
+   1. Design tokens (CSS variables)  <-- EDIT COLOURS, FONTS & SPACING HERE ONLY
+   2. Reset & base elements
+   3. Typography
+   4. Layout primitives (container, section, grid)
+   5. Section-specific base styles
+
+   Component styling (buttons, cards, navbar, etc.) lives in components.css.
+   Helper classes live in utilities.css. Breakpoints live in responsive.css.
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   1. DESIGN TOKENS  —  the ONLY place you should change colours / fonts / spacing
+   ---------------------------------------------------------------------------- */
+:root {
+  /* Brand colours (from brand spec) */
+  --color-primary: #2563EB;        /* Primary Blue */
+  --color-primary-dark: #1D4ED8;
+  --color-primary-light: #DBEAFE;
+  --color-secondary: #10B981;      /* Primary Green */
+  --color-secondary-dark: #059669;
+  --color-secondary-light: #D1FAE5;
+
+  /* Neutrals */
+  --color-text: #0F172A;           /* Dark text */
+  --color-text-soft: #475569;
+  --color-text-muted: #64748B;
+  --color-bg: #F8FAFC;             /* Light background */
+  --color-surface: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-border-soft: #EEF2F6;
+
+  /* Brand gradient (blue -> green). Used for accents & CTAs. */
+  --gradient-brand: linear-gradient(135deg, #2563EB 0%, #10B981 100%);
+  --gradient-brand-soft: linear-gradient(135deg, rgba(37,99,235,0.08) 0%, rgba(16,185,129,0.08) 100%);
+
+  /* Typography
+     Display: Plus Jakarta Sans (headlines) | Manrope (sub-display)
+     Body:    Inter
+     Fonts are loaded via <link> in each HTML <head>. */
+  --font-display: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Fluid type scale (clamp = scales smoothly between mobile & desktop) */
+  --fs-hero: clamp(2.25rem, 5vw + 1rem, 4rem);
+  --fs-h1: clamp(2rem, 3.5vw + 1rem, 3rem);
+  --fs-h2: clamp(1.6rem, 2.5vw + 0.8rem, 2.4rem);
+  --fs-h3: clamp(1.25rem, 1.2vw + 0.8rem, 1.5rem);
+  --fs-lead: clamp(1.05rem, 0.6vw + 0.9rem, 1.25rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Radius & shadow */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.05);
+  --shadow-md: 0 8px 24px rgba(15,23,42,0.08);
+  --shadow-lg: 0 20px 48px rgba(15,23,42,0.12);
+  --shadow-glow: 0 12px 36px rgba(37,99,235,0.18);
+
+  /* Layout */
+  --container-max: 1200px;
+  --navbar-height: 72px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.25s var(--ease);
+}
+
+/* ----------------------------------------------------------------------------
+   2. RESET & BASE
+   ---------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;            /* smooth scrolling for anchor links */
+  scroll-padding-top: var(--navbar-height); /* stop sticky navbar covering anchors */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Respect users who prefer reduced motion (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, textarea, select { font-family: inherit; font-size: inherit; }
+
+/* Accessible focus ring for keyboard navigation */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip-to-content link for screen readers / keyboard users */
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--color-text); color: #fff;
+  padding: 0.75rem 1.25rem; z-index: 1000; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+/* ----------------------------------------------------------------------------
+   3. TYPOGRAPHY
+   ---------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); font-weight: 700; }
+p  { color: var(--color-text-soft); }
+
+.lead { font-size: var(--fs-lead); color: var(--color-text-soft); }
+
+/* Gradient text helper — used for emphasised words in headlines */
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ----------------------------------------------------------------------------
+   4. LAYOUT PRIMITIVES
+   ---------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* Every major homepage block uses .section so vertical rhythm stays consistent.
+   To remove a section, delete its <section> in the HTML — spacing stays intact. */
+.section { padding-block: var(--space-2xl); }
+.section--tight { padding-block: var(--space-xl); }
+.section--alt { background: var(--color-surface); }
+
+/* Section header (eyebrow + title + intro), reused across sections */
+.section-head { max-width: 720px; margin-bottom: var(--space-lg); }
+.section-head--center { margin-inline: auto; text-align: center; }
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+.section-head p { margin-top: var(--space-sm); font-size: var(--fs-lead); }
+
+/* Reusable responsive grid (auto-fit cards) */
+.grid { display: grid; gap: var(--space-md); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+.grid--auto { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+/* ----------------------------------------------------------------------------
+   5. SECTION BASE BACKGROUNDS / ATMOSPHERE
+   ---------------------------------------------------------------------------- */
+/* Soft decorative blobs used in hero & CTA for depth (purely decorative) */
+.bg-decor { position: relative; overflow: hidden; }
+.bg-decor::before,
+.bg-decor::after {
+  content: ""; position: absolute; border-radius: 50%;
+  filter: blur(80px); opacity: 0.5; z-index: 0; pointer-events: none;
+}
+.bg-decor::before { width: 420px; height: 420px; background: rgba(37,99,235,0.18); top: -120px; right: -80px; }
+.bg-decor::after  { width: 380px; height: 380px; background: rgba(16,185,129,0.16); bottom: -120px; left: -100px; }
+.bg-decor > * { position: relative; z-index: 1; }

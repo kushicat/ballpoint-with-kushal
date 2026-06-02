@@ -1,0 +1,16 @@
+<!-- PLACEHOLDER: replace with a real professional photo of Kushal.
+     Recommended real file: assets/images/kushal-hero.jpg (around 900x1100px, portrait). -->
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Photo placeholder">
+  <defs>
+    <linearGradient id="phGrad" x1="0" y1="0" x2="900" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563EB" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" rx="28" fill="#F8FAFC"/>
+  <rect width="900" height="1100" rx="28" fill="url(#phGrad)"/>
+  <circle cx="450" cy="430" r="150" fill="#CBD5E1"/>
+  <path d="M250 880c0-130 90-220 200-220s200 90 200 220" fill="#CBD5E1"/>
+  <text x="450" y="1010" text-anchor="middle" font-family="'Inter',sans-serif" font-size="30" font-weight="700" fill="#64748B">Your Photo Here</text>
+  <text x="450" y="1050" text-anchor="middle" font-family="'Inter',sans-serif" font-size="20" fill="#94A3B8">assets/images/kushal-hero.jpg</text>
+</svg>
