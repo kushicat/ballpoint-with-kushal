@@ -193,8 +193,8 @@ p  { color: var(--color-text-soft); }
 /* Reusable responsive grid (auto-fit cards) */
 .grid { display: grid; gap: var(--space-md); }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
-.grid--3 { grid-template-columns: repeat(3, 1fr); }
-.grid--4 { grid-template-columns: repeat(4, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .grid--auto { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
 /* ----------------------------------------------------------------------------
