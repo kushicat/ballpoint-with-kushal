@@ -203,8 +203,10 @@
 .ebook-card__cover span { display: block; font-family: var(--font-body); font-size: var(--fs-small); font-weight: 600; opacity: 0.85; margin-top: 0.5rem; }
 
 /* ----------------------------- RESOURCE CARDS ------------------------------ */
-.resource-card { display: flex; align-items: flex-start; gap: var(--space-md); }
+.resource-card { display: flex; align-items: flex-start; gap: var(--space-md); min-width: 0; }
 .resource-card .card__icon { margin-bottom: 0; flex-shrink: 0; }
+.resource-card > div { min-width: 0; }
+.resource-card p { overflow-wrap: break-word; }
 
 /* ----------------------------- YOUTUBE SECTION ----------------------------- */
 .video-card { overflow: hidden; padding: 0; }
