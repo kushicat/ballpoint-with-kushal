@@ -1,32 +1,10 @@
 {
-  "_comment": "IMPORTANT — these are PLACEHOLDER testimonials. Do NOT publish fake testimonials on a live site: it misleads visitors and can breach advertising rules. Replace every entry below with a REAL quote (with permission) before launch, or remove the testimonials section entirely until you have real ones. Same goes for the 'stats' numbers — set them to true values or remove them.",
+  "_comment": "Do NOT publish invented testimonials or made-up numbers — this misleads visitors and can violate advertising/consumer-protection rules. Stats below are real zeros until you have real numbers. testimonials is an empty array until you have genuine, permissioned quotes. If you have neither, consider removing the Testimonials section from index.html entirely (see SECTION 8) rather than showing zeros.",
   "stats": [
-    { "value": 0, "suffix": "+", "label": "Students mentored", "note": "PLACEHOLDER — set real number" },
-    { "value": 0, "suffix": "+", "label": "Hours of content", "note": "PLACEHOLDER — set real number" },
-    { "value": 0, "suffix": "%", "label": "Would recommend", "note": "PLACEHOLDER — set real number" },
-    { "value": 0, "suffix": "+", "label": "Free resources", "note": "PLACEHOLDER — set real number" }
+    { "value": 0, "label": "Students Reached" },
+    { "value": 0, "label": "Hours of Content" },
+    { "value": 0, "label": "Resources Published" },
+    { "value": 0, "label": "Years Teaching" }
   ],
-  "testimonials": [
-    {
-      "id": "placeholder-1",
-      "quote": "PLACEHOLDER — replace with a real, permission-given student quote. Describe the specific result they got (e.g. an admission or job offer).",
-      "name": "Student Name",
-      "role": "Target Exam / Outcome",
-      "avatar": ""
-    },
-    {
-      "id": "placeholder-2",
-      "quote": "PLACEHOLDER — a second real testimonial goes here. Keep it concrete and honest. One or two sentences is enough.",
-      "name": "Student Name",
-      "role": "Target Exam / Outcome",
-      "avatar": ""
-    },
-    {
-      "id": "placeholder-3",
-      "quote": "PLACEHOLDER — a third real testimonial goes here. Specific beats generic — mention what changed for them.",
-      "name": "Student Name",
-      "role": "Target Exam / Outcome",
-      "avatar": ""
-    }
-  ]
+  "testimonials": []
 }

@@ -1,87 +1,137 @@
 /* ============================================================================
    BALLPOINT WITH KUSHAL — animations.js
-   Handles: scroll-reveal effects, animated number counters, and the
-   back-to-top button. Uses IntersectionObserver (efficient, no scroll spam).
-   Respects prefers-reduced-motion automatically (CSS handles the reduction).
+   Scroll-triggered reveal, animated stat counters, the ruled notebook-paper
+   background, and the ballpoint-nib scroll-progress indicator.
+   All of this respects prefers-reduced-motion.
    ============================================================================ */
+window.BPK = window.BPK || {};
+
 (function () {
-  "use strict";
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ---- 1. Scroll reveal --------------------------------------------------- */
-  /* Any element with [data-reveal] fades/slides in when it enters the viewport.
-     Add data-reveal to a new element and it animates automatically. */
-  const revealEls = document.querySelectorAll("[data-reveal]");
-  if (revealEls.length && "IntersectionObserver" in window && !prefersReduced) {
-    const revealObserver = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
+  /* ---------------------- scroll reveal for [data-reveal] ------------------
+     Also automatically watches every .eyebrow tag (the small yellow pills)
+     so they get their pop-in animation without needing data-reveal added
+     by hand to each one in the HTML. */
+  const revealEls = document.querySelectorAll('[data-reveal], .eyebrow');
+  if (revealEls.length) {
+    if (reduceMotion) {
+      revealEls.forEach(el => el.classList.add('is-revealed'));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-revealed");
-            obs.unobserve(entry.target); // animate once, then stop watching
+            entry.target.classList.add('is-revealed');
+            io.unobserve(entry.target);
           }
         });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    revealEls.forEach((el) => revealObserver.observe(el));
-  } else {
-    // Reduced motion or no IO support: just show everything
-    revealEls.forEach((el) => el.classList.add("is-revealed"));
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(el => io.observe(el));
+    }
   }
 
-  /* ---- 2. Animated counters ----------------------------------------------- */
-  /* Any element with [data-counter="123"] counts up from 0 when scrolled into
-     view. Optional [data-suffix="+"] appends a symbol. */
-  function animateCounter(el) {
-    const target = parseFloat(el.getAttribute("data-counter")) || 0;
-    const suffix = el.getAttribute("data-suffix") || "";
-    const duration = 1400;
-    if (prefersReduced || target === 0) {
-      el.textContent = target + suffix;
-      return;
-    }
+  /* ---------------------- animated stat counters ---------------------------
+     Populated once data/testimonials.json has loaded and main.js has built
+     the .stat elements with a data-target attribute. This just handles the
+     count-up animation when a [data-stats] block scrolls into view. */
+  function animateCount(el) {
+    const target = parseFloat(el.dataset.target || '0');
+    const isDecimal = String(el.dataset.target || '').includes('.');
+    const duration = reduceMotion ? 0 : 900;
     const start = performance.now();
-    function tick(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-      el.textContent = Math.round(eased * target).toLocaleString() + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
+    function step(now) {
+      const progress = duration ? Math.min((now - start) / duration, 1) : 1;
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = target * eased;
+      el.textContent = isDecimal ? value.toFixed(1) : Math.round(value).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
     }
-    requestAnimationFrame(tick);
+    requestAnimationFrame(step);
+  }
+  BPK.animateCount = animateCount;
+
+  const statsBlock = document.querySelector('[data-stats]');
+  if (statsBlock) {
+    const statsIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat__num[data-target]').forEach(animateCount);
+          statsIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    statsIO.observe(statsBlock);
   }
 
-  const counters = document.querySelectorAll("[data-counter]");
-  if (counters.length && "IntersectionObserver" in window) {
-    const counterObserver = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    counters.forEach((el) => counterObserver.observe(el));
-  } else {
-    counters.forEach(animateCounter);
+  /* ---------------------- ruled notebook-paper background -------------------
+     Draws a full-viewport SVG of horizontal ruled lines plus a single
+     vertical "margin" rule near the left, like a page from an exam
+     notebook. Regenerated on resize. Skipped under reduced-motion is not
+     necessary here since it's static (no animation), just lightweight. */
+  const bgGrid = document.getElementById('bgGrid');
+  function renderBgGrid() {
+    if (!bgGrid) return;
+    const w = window.innerWidth;
+    const h = window.innerHeight * 2.2; // taller than viewport so it covers scroll without re-render
+    const lineGap = 34;
+    let lines = '';
+    for (let y = lineGap; y < h; y += lineGap) {
+      lines += `<line class="gline" x1="0" y1="${y}" x2="${w}" y2="${y}" />`;
+    }
+    const marginX = Math.min(72, w * 0.08);
+    const margin = `<line class="gline--margin" x1="${marginX}" y1="0" x2="${marginX}" y2="${h}" />`;
+    bgGrid.innerHTML = `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">${margin}${lines}</svg>`;
   }
+  renderBgGrid();
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(renderBgGrid, 200);
+  });
 
-  /* ---- 3. Back-to-top button ---------------------------------------------- */
-  const backToTop = document.querySelector(".back-to-top");
-  if (backToTop) {
-    const toggle = () => backToTop.classList.toggle("is-visible", window.scrollY > 600);
-    window.addEventListener("scroll", toggle, { passive: true });
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
+  /* ---------------------- ballpoint-nib scroll indicator --------------------
+     Replaces the old circular back-to-top button. The nib SVG travels down
+     a fixed vertical rule on the right edge, tracking scroll progress
+     through the page. Clicking it scrolls back to top with a small
+     "landing" squash animation borrowed from the reference implementation. */
+  const ball = document.getElementById('scrollBall');
+  if (ball) {
+    let ticking = false;
+    let lastTop = -1;
+
+    function updateBall() {
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || doc.scrollTop;
+      const scrollHeight = doc.scrollHeight - doc.clientHeight;
+      const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+
+      const rule = document.querySelector('.scroll-rule');
+      const railTop = rule ? rule.getBoundingClientRect().top : 76;
+      const railHeight = rule ? rule.getBoundingClientRect().height : window.innerHeight - 96;
+      const nibHeight = 28;
+      const top = railTop + progress * (railHeight - nibHeight);
+
+      ball.style.top = `${top}px`;
+      ball.classList.toggle('is-visible', scrollTop > 80);
+
+      if (Math.abs(top - lastTop) > 40 && !reduceMotion) {
+        ball.classList.remove('land');
+        void ball.offsetWidth;
+        ball.classList.add('land');
+      }
+      lastTop = top;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateBall); }
+    }, { passive: true });
+    window.addEventListener('resize', () => requestAnimationFrame(updateBall));
+
+    ball.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
-    toggle();
-  }
 
-  // Expose counter helper so main.js can re-trigger it on dynamically added stats
-  window.BPK = window.BPK || {};
-  window.BPK.animateCounter = animateCounter;
+    updateBall();
+  }
 })();

@@ -1,15 +1,7 @@
-<!-- PLACEHOLDER: square portrait for the About section.
-     Replace with assets/images/kushal-about.jpg (around 800x800px). -->
-<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portrait placeholder">
-  <defs>
-    <linearGradient id="phGrad2" x1="0" y1="0" x2="800" y2="800" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#10B981" stop-opacity="0.14"/>
-      <stop offset="1" stop-color="#2563EB" stop-opacity="0.14"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="800" rx="24" fill="#F1F5F9"/>
-  <rect width="800" height="800" rx="24" fill="url(#phGrad2)"/>
-  <circle cx="400" cy="330" r="120" fill="#CBD5E1"/>
-  <path d="M230 680c0-110 76-185 170-185s170 75 170 185" fill="#CBD5E1"/>
-  <text x="400" y="760" text-anchor="middle" font-family="'Inter',sans-serif" font-size="26" font-weight="700" fill="#64748B">Portrait Placeholder</text>
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder portrait of Kushal">
+  <rect width="800" height="800" fill="#ECE6D6"/>
+  <rect x="0" y="0" width="800" height="800" fill="none" stroke="#0E0E10" stroke-width="6"/>
+  <circle cx="400" cy="310" r="130" fill="#F5F2E8" stroke="#0E0E10" stroke-width="6"/>
+  <path d="M 220 700 Q 220 480 400 480 Q 580 480 580 700 Z" fill="#F5F2E8" stroke="#0E0E10" stroke-width="6"/>
+  <text x="400" y="760" text-anchor="middle" font-family="'Space Mono', monospace" font-size="20" font-weight="700" fill="#5C5C66">REPLACE WITH REAL PHOTO</text>
 </svg>

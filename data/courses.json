@@ -1,69 +1,27 @@
-{
-  "_comment": "EDIT THIS FILE to change course cards. No HTML/CSS knowledge needed. Add a new object to the array to add a new course card. Keep the structure identical. 'status' can be: waitlist | enrolling | live | coming-soon. 'link' is where the button points (replace # with a Google Form URL later).",
-  "courses": [
-    {
-      "id": "iba-quant",
-      "title": "IBA MBA Quant Mastery",
-      "badge": "Flagship",
-      "status": "waitlist",
-      "icon": "function",
-      "description": "A structured, exam-focused path through every quantitative topic the IBA MBA admission test throws at you — built by a Math graduate who has sat the exam.",
-      "features": [
-        "Concept-first lessons, not shortcuts",
-        "Topic-wise problem sets with solutions",
-        "Timed sectional and full mock tests",
-        "Common trap & error-pattern breakdowns"
-      ],
-      "link": "#waitlist",
-      "ctaLabel": "Join Waitlist"
-    },
-    {
-      "id": "english-mastery",
-      "title": "English Mastery Program",
-      "badge": "",
-      "status": "waitlist",
-      "icon": "book",
-      "description": "Grammar, vocabulary, comprehension and writing for admission and job tests — taught as one connected system instead of scattered rules.",
-      "features": [
-        "Grammar rules with usage logic",
-        "High-frequency vocabulary banks",
-        "Reading comprehension strategy",
-        "Sentence correction drills"
-      ],
-      "link": "#waitlist",
-      "ctaLabel": "Join Waitlist"
-    },
-    {
-      "id": "bank-job-prep",
-      "title": "Bank Job Preparation",
-      "badge": "Popular",
-      "status": "waitlist",
-      "icon": "bank",
-      "description": "End-to-end preparation for Bangladesh Bank, combined bank, and private bank written and viva stages — from a working Management Trainee.",
-      "features": [
-        "Syllabus-mapped study roadmap",
-        "Written + MCQ practice sets",
-        "Banking awareness & current affairs",
-        "Viva and interview preparation"
-      ],
-      "link": "#waitlist",
-      "ctaLabel": "Join Waitlist"
-    },
-    {
-      "id": "competitive-toolkit",
-      "title": "Competitive Exam Toolkit",
-      "badge": "",
-      "status": "coming-soon",
-      "icon": "target",
-      "description": "A cross-exam resource library — formulas, frameworks, checklists and revision systems — usable across BCS, bank, and corporate aptitude tests.",
-      "features": [
-        "Quick-revision formula sheets",
-        "Reusable problem-solving frameworks",
-        "Exam-day checklists & timing plans",
-        "Spaced-revision schedule templates"
-      ],
-      "link": "#waitlist",
-      "ctaLabel": "Notify Me"
-    }
-  ]
-}
+[
+  {
+    "_comment": "Add/remove course objects here. status: waitlist | enrolling | live | coming-soon",
+    "title": "IBA MBA Prep — Quant Foundations",
+    "description": "Concept-first quantitative aptitude for the IBA MBA admission test, taught by someone who cracked it through self-study.",
+    "status": "waitlist",
+    "features": [
+      "Arithmetic, algebra & geometry from first principles",
+      "Timed practice sets matching real exam difficulty",
+      "Weekly structured study plan"
+    ],
+    "cta": "Join Waitlist",
+    "link": "#waitlist"
+  },
+  {
+    "title": "Bank Job Written Test — Complete Prep",
+    "description": "English, Bangla, Math, and General Knowledge structured around what bank recruitment tests actually ask.",
+    "status": "coming-soon",
+    "features": [
+      "Spelling, vocabulary & grammar drills",
+      "Bank-specific GK and current affairs",
+      "Full-length mock written tests"
+    ],
+    "cta": "Join Waitlist",
+    "link": "#waitlist"
+  }
+]
